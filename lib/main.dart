@@ -40,6 +40,7 @@ class _MyApp extends State<MyApp> {
       routes: {
         //when use the next route don't use the home property
         '/': (BuildContext context) => AuthPage(),
+        '/home': (BuildContext context) => HomePage(_products),
         ///////////
         '/admin': (BuildContext context) =>
             ProductAdmin(_products, _addProduct, _deleteProduct),

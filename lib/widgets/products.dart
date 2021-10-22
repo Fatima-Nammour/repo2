@@ -12,7 +12,39 @@ class Products extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Image.asset(products[index]['imageUrl']!),
-          Text(products[index]['title']!),
+          Container(
+            padding: EdgeInsets.only(top: 10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Text(
+                    products[index]['title'],
+                    style: TextStyle(
+                        fontSize: 26.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Oswald'),
+                  ),
+                ),
+                SizedBox(
+                  width: 20.0,
+                ),
+                Expanded(
+                  child: Container(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.5),
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).accentColor,
+                        borderRadius: BorderRadius.circular(5.0)),
+                    child: Text(
+                      '\$${products[index]['price'].toString()}',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
           ButtonBar(
             alignment: MainAxisAlignment.start,
             children: <Widget>[
@@ -69,7 +101,6 @@ class Products extends StatelessWidget {
           );
   }
 }
-
 /*ListView(
 children: products.map((element) {
 print("inside map " + products.length.toString() + element);

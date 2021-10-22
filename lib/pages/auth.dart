@@ -91,6 +91,7 @@ class _AuthPageState extends State<AuthPage> {
                   style: styButton,
                   child: Text('Login'),
                   onPressed: () {
+                    print('login');
                     /*showModalBottomSheet(
                     context: context,
                     builder: (BuildContext context) {
@@ -98,7 +99,7 @@ class _AuthPageState extends State<AuthPage> {
                         child: Text('This is a Modal!'),
                       );
                     });*/
-                    Navigator.pushReplacementNamed(context, '/');
+                    Navigator.pushReplacementNamed(context, '/home');
                   },
                 ),
               ),
